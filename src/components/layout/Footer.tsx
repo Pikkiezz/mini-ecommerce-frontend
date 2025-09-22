@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Us */}
-          <div className="space-y-6">
+          <div id="contact" className="space-y-6">
             <h3 className="text-xl font-bold text-white flex items-center font-poppins">
               📞 Contact Us
             </h3>
@@ -105,16 +105,13 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-center items-center align-center">
             <p className="text-stone-100 text-sm flex items-center">
-              © 2024 Pikkuri. Made with 
+              © 2025 Pikkuri. Made with 
               <span className="mx-1 animate-pulse">☕</span> 
               for coffee and bakery lovers everywhere.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="/privacy" className="text-stone-100 hover:text-amber-300 text-sm transition-colors hover:underline">Privacy Policy</a>
-              <a href="/terms" className="text-stone-100 hover:text-amber-300 text-sm transition-colors hover:underline">Terms of Service</a>
-            </div>
+           
           </div>
         </div>
       </div>

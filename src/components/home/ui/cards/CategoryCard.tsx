@@ -22,7 +22,7 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
       href={`/categories/${category.id}`}
       className="group block transform hover:scale-105 transition-all duration-300"
     >
-      <div className={`${category.bgColor} rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/50 relative overflow-hidden`}>
+      <div className={`${category.bgColor} rounded-3xl p-8 shadow-lg h-90 hover:shadow-2xl transition-all duration-500 border border-white/50 relative overflow-hidden`}>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-4 right-4 w-20 h-20 bg-white/20 rounded-full"></div>

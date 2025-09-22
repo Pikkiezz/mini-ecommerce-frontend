@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Fredoka, Quicksand, Poppins } from "next/font/google";
 import "./globals.css";
+import { CartProvider, FilterProvider } from '@/contexts';
+import { ProfileProvider } from '@/contexts/ProfileContext';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 const fredoka = Fredoka({
   variable: "--font-fredoka",
@@ -32,12 +35,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${fredoka.variable} ${quicksand.variable} ${poppins.variable} antialiased bg-white`}
-      >
-        {children}
-      </body>
-    </html>
+        <html lang="en">
+          <body
+            className={`${fredoka.variable} ${quicksand.variable} ${poppins.variable} antialiased bg-white`}
+          >
+            <FilterProvider>
+              <AuthProvider>
+                <CartProvider>
+                  <ProfileProvider>
+                    {children}
+                  </ProfileProvider>
+                </CartProvider>
+              </AuthProvider>
+            </FilterProvider>
+          </body>
+        </html>
   );
 }

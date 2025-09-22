@@ -11,7 +11,7 @@ const Menu = () => {
       <main className="pt-20">
         <MenuHero />
         <MenuCategories />
-        <MenuCTA />
+        {/* <MenuCTA /> */}
       </main>
 
       <Footer />

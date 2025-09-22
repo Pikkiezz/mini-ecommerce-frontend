@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useCart } from '@/contexts/CartContext';
+
 
 interface Product {
   id: number;
@@ -23,7 +24,8 @@ interface ProductCardProps {
   onQuantityChange: (productId: number, change: number) => void;
 }
 
-const ProductCard = ({ product, quantity, onQuantityChange }: ProductCardProps) => {
+export const ProductCard = ({ product, quantity, onQuantityChange }: ProductCardProps) => {
+  const { addToCart } = useCart();
   return (
     <div className="group">
       <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform hover:-translate-y-2 border border-stone-200/50">
@@ -116,6 +118,17 @@ const ProductCard = ({ product, quantity, onQuantityChange }: ProductCardProps) 
                 : 'bg-stone-200 text-stone-500 cursor-not-allowed'
             }`}
             disabled={quantity === 0}
+            onClick={() => {
+              onQuantityChange(product.id, -quantity);
+              addToCart({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                emoji: product.emoji,
+                quantity: quantity // ← ส่ง quantity ที่เลือกไว้
+              });
+            }}
           >
             🛒 Add to Cart - ${(product.price * quantity).toFixed(2)}
           </button>

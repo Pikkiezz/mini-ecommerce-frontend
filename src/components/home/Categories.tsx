@@ -88,7 +88,7 @@ const Categories = () => {
         {/* View All Categories Button */}
         <div className="text-center mt-12">
           <Link
-            href="/categories"
+            href="/menu"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-stone-600 to-amber-600 text-white font-bold rounded-full text-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl transform hover:-translate-y-2"
           >
             🥐 Explore All Categories
